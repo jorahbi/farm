@@ -1,0 +1,60 @@
+body {
+  background-color: #fbf9fe;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+img {
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+}
+.demo-icon-22 {
+  font-family: 'vux-demo';
+  font-size: 22px;
+  color: #888;
+}
+.vux-demo-tabbar .weui-bar__item_on .demo-icon-22 {
+  color: #F70968;
+}
+.vux-demo-tabbar .weui-tabbar_item.weui-bar__item_on .vux-demo-tabbar-icon-home {
+  color: rgb(53, 73, 94);
+}
+.demo-icon-22:before {
+  content: attr(icon);
+}
+.vux-demo-tabbar-component {
+  background-color: #F70968;
+  color: #fff;
+  border-radius: 7px;
+  padding: 0 4px;
+  line-height: 14px;
+}
+@font-face {
+  font-family: 'vux-demo';  /* project id 70323 */
+  src: url('//at.alicdn.com/t/font_70323_wlronpvr565yiudi.eot');
+  src: url('//at.alicdn.com/t/font_70323_wlronpvr565yiudi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_70323_wlronpvr565yiudi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_70323_wlronpvr565yiudi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_70323_wlronpvr565yiudi.svg#iconfont') format('svg');
+}
+.menu-title {
+  color: #888;
+}
+.slide {
+  padding: 0 10px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .5s cubic-bezier(0, 1, 0, 1) -.1s;
+}
+.animate {
+  max-height: 9999px;
+  transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
+  transition-delay: 0s;
+}
+.drawer {
+  color: #ffffff;
+  width: 200px;
+}
