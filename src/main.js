@@ -11,8 +11,11 @@ import vuxLocales from './locales/all.yml'
 import componentsLocales from './locales/components.yml'
 import { Group, Cell, DatetimePlugin, CloseDialogsPlugin, ConfigPlugin, BusPlugin, LocalePlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, WechatPlugin, AjaxPlugin, AppPlugin } from 'vux'
 import 'lib-flexible/flexible'
+import breadcrumb from './components/breadcrumb.vue'
+
 require('es6-promise').polyfill()
 
+Vue.component('Breadcrumb', breadcrumb)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -44,8 +47,6 @@ if (/no-background-color=true/.test(location.href)) {
 // no transitoin in demo site
 const shouldUseTransition = !/transition=none/.test(location.href)
 
-console.log(vuxLocales['en'])
-console.log(componentsLocales)
 const finalLocales = {
   'en': objectAssign(vuxLocales['en'], componentsLocales['en']),
   'zh-CN': objectAssign(vuxLocales['zh-CN'], componentsLocales['zh-CN'])

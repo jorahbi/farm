@@ -1,21 +1,7 @@
 en:
   orders: orders
-  vux.actionsheet.cancel: cancel
-  vux.datetime.confirm_text: done
-  vux.inline-calendar.week_day_0: Su
-  vux.inline-calendar.week_day_1: Mo
-  vux.inline-calendar.week_day_2: Tu
-  vux.inline-calendar.week_day_3: We
-  vux.inline-calendar.week_day_4: Th
-  vux.inline-calendar.week_day_5: Fr
-  vux.inline-calendar.week_day_6: Sa
 zh-CN:
   orders: 订单
-  vux.actionsheet.cancel: 取消
-  vux.inline-calendar.week_day_0: 日
-  vux.inline-calendar.week_day_1: 一
-  vux.inline-calendar.week_day_2: 二
-  vux.inline-calendar.week_day_3: 三
-  vux.inline-calendar.week_day_4: 四
-  vux.inline-calendar.week_day_5: 五
-  vux.inline-calendar.week_day_6: 六
+  menus.dashboard: 仪表盘
+  menus.category: 菜品-分类列表
+  list.add.search: 添加筛选项

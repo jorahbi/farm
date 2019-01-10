@@ -23,27 +23,60 @@
                 @click.native="menuActive(1)"></cell>
         <div class="slide" :class="isMenuActive(1) ?'animate':''">
           <template v-if="isMenuActive(1)">
-            <cell-box is-link>分类列表</cell-box>
-            <cell-box link="http://github.com/airyland/vux">菜品列表</cell-box>
-            <cell-box is-link>配菜列表</cell-box>
+            <cell-box link="/category">分类列表</cell-box>
+            <cell-box link="/parts">菜品列表</cell-box>
+            <cell-box link="/items">配菜列表</cell-box>
           </template>
         </div>
         <cell
-                title="demo"
+                title="优惠管理"
                 is-link
                 :border-intent="false"
                 :arrow-direction="isMenuActive(2) ? 'up' : 'down'"
                 @click.native="menuActive(2)"></cell>
         <div class="slide" :class="isMenuActive(2) ?'animate':''">
           <template v-if="isMenuActive(2)">
-            <cell-box :border-intent="false" class="sub-item" is-link>分类列表</cell-box>
-            <cell-box class="sub-item" is-link>content 001</cell-box>
-            <cell-box class="sub-item" is-link>content 001</cell-box>
+            <cell-box class="sub-item" link="/discount">优惠券</cell-box>
+            <cell-box class="sub-item" link="/activity">活动</cell-box>
+          </template>
+        </div>
+        <cell
+                title="会员管理"
+                is-link
+                :border-intent="false"
+                :arrow-direction="isMenuActive(3) ? 'up' : 'down'"
+                @click.native="menuActive(3)"></cell>
+        <div class="slide" :class="isMenuActive(3) ?'animate':''">
+          <template v-if="isMenuActive(3)">
+            <cell-box class="sub-item" link="/members">会员列表</cell-box>
+          </template>
+        </div>
+        <cell
+                title="内容管理"
+                is-link
+                :border-intent="false"
+                :arrow-direction="isMenuActive(3) ? 'up' : 'down'"
+                @click.native="menuActive(3)"></cell>
+        <div class="slide" :class="isMenuActive(3) ?'animate':''">
+          <template v-if="isMenuActive(3)">
+            <cell-box link="/comment">评论列表</cell-box>
+            <cell-box link="/ad">广告管理</cell-box>
+          </template>
+        </div>
+        <cell
+                title="系统管理"
+                is-link
+                :border-intent="false"
+                :arrow-direction="isMenuActive(3) ? 'up' : 'down'"
+                @click.native="menuActive(3)"></cell>
+        <div class="slide" :class="isMenuActive(3) ?'animate':''">
+          <template v-if="isMenuActive(3)">
+            <cell-box link="/sys">系统设置</cell-box>
           </template>
         </div>
       </div>
       <!-- main content -->
-      <view-box ref="viewBox" :body-padding-top="isShowNav ? '46px' : '0'" body-padding-bottom="55px">
+      <view-box ref="viewBox" class="main-view-box">
         <x-header
                 v-if="isShowNav"
                 slot="header"
@@ -64,45 +97,27 @@
                 :name="viewTransition" :css="!!direction">
           <router-view class="router-view"></router-view>
         </transition>
-
-        <!--<tabbar class="vux-demo-tabbar" icon-class="vux-center" v-show="!isTabbarDemo && isShowBar" slot="bottom">-->
-        <!--<tabbar-item :link="{path:'/index/index'}" :selected="isActive(['/', '/index/index'])">-->
-        <!--<span class="demo-icon-22 vux-demo-tabbar-icon-home" slot="icon" style="position:relative;top: -2px;">&#xe637;</span>-->
-        <!--<span slot="label">Home</span>-->
-        <!--</tabbar-item>-->
-        <!--<tabbar-item :link="{path:'/orders/list'}" :selected="isActive(['/orders/list'])" badge="9">-->
-        <!--<span class="demo-icon-22" slot="icon">&#xe633;</span>-->
-        <!--<span slot="label">{{ $t('orders')}}</span>-->
-        <!--</tabbar-item>-->
-        <!--</tabbar>-->
-
       </view-box>
     </drawer>
   </div>
 </template>
 
 <script>
-import { Radio, Group, Cell, Badge, Drawer, Actionsheet, ButtonTab, ButtonTabItem, ViewBox, XHeader, Tabbar, TabbarItem, Loading, TransferDom, CellBox } from 'vux'
+import { Group, Cell, Drawer, Actionsheet, ViewBox, XHeader, Loading, TransferDom, CellBox } from 'vux'
 import { mapState, mapActions } from 'vuex'
 export default {
   directives: {
     TransferDom
   },
   components: {
-    Radio,
     Group,
     Cell,
-    Badge,
     Drawer,
-    ButtonTab,
-    ButtonTabItem,
     ViewBox,
     XHeader,
-    Tabbar,
-    TabbarItem,
     Loading,
-    Actionsheet,
-    CellBox
+    CellBox,
+    Actionsheet
   },
   methods: {
     onClickMore () {
@@ -186,9 +201,7 @@ export default {
       showModeValue: 'push',
       showPlacement: 'left',
       showPlacementValue: 'left',
-      currentMenu: '',
-      showContent001: false,
-      showContent002: true
+      currentMenu: 0
     }
   }
 }
